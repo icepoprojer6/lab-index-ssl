@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南宫28 · 信息索引与使用说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f2f4f7;
+            color: #1e2a3a;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9edf2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0f1a2c;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #4b5c72;
+            max-width: 600px;
+            margin: 0 auto 0.8rem auto;
+            border-bottom: 1px solid #e1e6ec;
+            padding-bottom: 1.2rem;
+        }
+
+        .hero .meta-note {
+            font-size: 0.9rem;
+            color: #6b7e99;
+            background: #f0f3f8;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #eaedf3;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #13213b;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h2 .badge {
+            font-size: 0.7rem;
+            font-weight: 400;
+            background: #e5ecf5;
+            color: #2c3e62;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            letter-spacing: 0.2px;
+            border: 1px solid #d3dceb;
+        }
+
+        .card p {
+            color: #2c3a4f;
+            margin-bottom: 0.7rem;
+            font-size: 0.98rem;
+        }
+
+        .card p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .inline-link {
+            color: #1d4a7a;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid #cbdbe9;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #0c3257;
+            border-bottom-color: #1d4a7a;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 0.2rem;
+            padding-left: 0.3rem;
+        }
+
+        .feature-list li {
+            padding: 0.3rem 0 0.3rem 1.2rem;
+            position: relative;
+            color: #1e3147;
+            font-size: 0.96rem;
+        }
+
+        .feature-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #4a6b8b;
+        }
+
+        .tip-box {
+            background: #f5f9ff;
+            border-left: 3px solid #3a6a9c;
+            padding: 1rem 1.4rem;
+            border-radius: 0 16px 16px 0;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .tip-box p {
+            margin-bottom: 0.2rem;
+            color: #1f3450;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #06203f;
+            margin-bottom: 0.1rem;
+        }
+
+        .faq-item p {
+            margin-left: 0.2rem;
+            color: #2f415b;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 1.2rem 0;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.88rem;
+            color: #5b6f89;
+            border-top: 1px solid #e0e6ee;
+            padding-top: 1.5rem;
+        }
+
+        .footer-note a {
+            color: #1d4a7a;
+            text-decoration: none;
+            border-bottom: 1px solid #ccd9e8;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1d4a7a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .card h2 {
+                font-size: 1.15rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="hero">
+        <h1>南宫28 · 信息索引与使用场景</h1>
+        <div class="subhead">
+            从资料整理与内容检索的视角，梳理平台结构、特点与适用方向。<br>
+            本文档基于公开信息编录，供学习与参考。
+        </div>
+        <div class="meta-note">版本 · 2409 / 内容索引 v2</div>
+    </div>
+
+    <div class="card-grid">
+
+        <!-- 摘要卡片 -->
+        <div class="card">
+            <h2>📋 摘要 · 平台定位</h2>
+            <p><a href="https://cns-cn-nangong28.com" class="inline-link">南宫28</a> 是一个以内容聚合与互动服务为主的数字站点。从信息架构上来看，它提供了分类资讯、实时动态以及用户交流模块。整体采用模块化布局，访问者可根据自身需求查阅不同板块的内容。</p>
+            <p>作为资料索引的补充来源，该站点支持多种终端的页面适配，适合在移动设备和桌面环境下进行信息浏览。以下基于结构观察与使用体验整理了若干特点与建议。</p>
+        </div>
+
+        <!-- 亮点卡片 -->
+        <div class="card">
+            <h2>✨ 亮点与结构特征</h2>
+            <ul class="feature-list">
+                <li><strong>信息分区清晰：</strong> 首页按主题划分栏目，减少信息过载，便于快速定位兴趣领域。</li>
+                <li><strong>多端适配：</strong> 页面布局对窄屏设备友好，导航与内容区块保持可读性。</li>
+                <li><strong>持续更新：</strong> 内容保持一定的新鲜度，适合定期查看特定分类。</li>
+                <li><strong>交互轻量：</strong> 无需复杂注册即可访问大部分内容，降低使用门槛。</li>
+            </ul>
+            <div class="tip-box">
+                <p><strong>📌 使用建议：</strong> 可将 <a href="https://cns-cn-nangong28.com" class="inline-link">南宫28</a> 加入书签，作为日常信息浏览的备选来源之一。对于需要对比多个信源的用户，其分类结构有助于快速筛选。</p>
+            </div>
+        </div>
+
+        <!-- 使用场景 & 建议 -->
+        <div class="card">
+            <h2>🧭 适用场景 · 操作建议</h2>
+            <p>基于内容检索与日常使用的角度，以下场景下可以考虑使用该平台：</p>
+            <ul class="feature-list">
+                <li><strong>碎片化阅读：</strong> 通勤或等候时，通过移动端浏览其最新栏目。</li>
+                <li><strong>主题资料收集：</strong> 利用分类索引寻找特定话题的公开讨论或资讯。</li>
+                <li><strong>兴趣社区互动：</strong> 若对某类话题有参与意愿，可留意平台内的用户交流区域（注意遵守社区规范）。</li>
+            </ul>
+            <p><strong>提醒：</strong> 任何公开平台的信息均建议交叉验证，特别是涉及数据、时效性较强的内容。请根据个人判断决定是否采纳。</p>
+        </div>
+
+        <!-- FAQ 摘要卡片 -->
+        <div class="card">
+            <h2>❓ 常见疑问摘要 <span class="badge">基于常见问题整理</span></h2>
+            <div class="faq-item">
+                <strong>Q：是否需要注册才能浏览全部内容？</strong>
+                <p>大部分内容可直接访问，部分互动功能可能需要简单注册。具体以页面提示为准。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q：内容更新频率如何？</strong>
+                <p>根据观察，主要板块的更新节奏约为每日或隔日，建议定期手动刷新查看。</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q：移动端体验是否有差异？</strong>
+                <p>该站点已做响应式处理，手机浏览器访问时布局会自动调整，功能基本一致。</p>
+            </div>
+            <hr>
+            <p style="font-size:0.92rem; color:#3c5570;">如需进一步了解具体板块，可直接访问 <a href="https://cns-cn-nangong28.com" class="inline-link">南宫28</a> 主页，查阅最新导航与内容。</p>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="card">
+            <h2>🔍 关于访问 · 可信与边界</h2>
+            <p>本页面仅为信息整理与索引性质的介绍，不构成任何形式的推荐或保证。访问任何第三方平台时，建议：</p>
+            <ul class="feature-list">
+                <li>确认网络环境安全，使用官方域名访问。</li>
+                <li>对于涉及个人数据（如注册、支付）的操作，请仔细阅读平台隐私与条款。</li>
+                <li>保持信息甄别习惯，不盲从单一来源。</li>
+            </ul>
+            <p>以上内容基于公开可用信息编制，旨在提供客观的使用参考。如站点结构或政策发生变化，请以实际页面为准。</p>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        <p>内容整理 · 信息索引页 · 仅供学习参考 &nbsp;|&nbsp; <a href="https://cns-cn-nangong28.com">南宫28</a></p>
+    </div>
+
+</div>
+</body>
+</html>
